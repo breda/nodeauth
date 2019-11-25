@@ -13,10 +13,6 @@ Check system requirements [here](https://adonisjs.com/docs/4.1/installation#_sys
 Install Adonis globally:
 `npm i -g @adonisjs/cli`
 
-Run the db migration:
-
-`adonis migration:run`
-
 Create a .env file with the following env vars:
 ```
 HOST=127.0.0.1
@@ -25,7 +21,7 @@ NODE_ENV=development
 APP_URL=http://${HOST}:${PORT}
 CACHE_VIEWS=false
 APP_KEY=
-DB_CONNECTION=sqlite
+DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_USER=root
@@ -38,10 +34,19 @@ HASH_DRIVER=bcrypt
 Generate an APP_KEY. This will populate `APP_KEY=` in your .env:
 `adonis key:generate`
 
-Run the application
+Run the application. Note: If you have a db error, you might need to set up mysql on your machine.
 `npm start`
 
+Run the db migration:
+
+`adonis migration:run`
+
 Visit http://127.0.0.1:3333/login
+
+# Testing
+
+Run `npm test`
+
 
 # Adonis fullstack application
 
