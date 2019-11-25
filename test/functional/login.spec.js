@@ -26,7 +26,7 @@ test('successful login', async ({ client, assert }) => {
   })
 
   const response = await client.post('/login').send({
-    email: 'test@test.com',
+    email: 'test2@test.com',
     password: 'password'
   }).end()
 
@@ -40,6 +40,7 @@ test('failed login', async ({ client, assert }) => {
     password: 'password'
   }).end()
 
+  // this test fails because we're rendering a template rather than returning a response object.
   assert.equal(response.message, "E_USER_NOT_FOUND: Cannot find user with email as doesntexist@test.com");
   response.assertStatus(200)
 })
